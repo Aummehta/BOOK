@@ -1,0 +1,36 @@
+<% layout("/layouts/boilerplate") %>
+
+    <h3 style="color: #224477; font-size: 2rem !important;">All Hotels</h3>
+        
+ 
+   
+
+    <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1">
+ <% for(let listing of alllistings){ %>
+    <a href="/hotel/<%= listing._id %>" class="listing-link">
+    <div class="card col listing-card  " >
+    <img src="<%= listing.image.url %>" class="card-img-top  blue-bordrr" alt="listing" style="height: 20rem;">
+    <!-- <img src="<%= listing.image2 %>" class="card-img-top" alt="additional_listing" style="height: 20rem; margin-top: 10px;"> -->
+     <div class="card-img-overlay"></div>
+     <div class="card-body" >
+        <p &#8377; class="card-text own-bordr" >
+            <b><%= listing.title %> </b><br />
+           
+            <!-- Price : &#8377; <%= (listing.price ? listing.price.toLocaleString("en-IN") : "N/A") %> /night  -->
+            Price : <span class="price-info" data-original-price="<%= listing.price %>" data-total-price="<%= (listing.price * 1.18).toFixed(2) %>">&#8377; <%= (listing.price ? listing.price.toLocaleString("en-IN") : "N/A") %></span> /night
+            <i class="tax-info">(18% GST)</i>
+            <% if (listing.averageRating) { %>
+                <span style="margin-left: 5px;">Rating: <%= listing.averageRating  %><span style="color:darkgoldenrod"><%= '★'.repeat(Math.round(listing.averageRating)) %></span></span>
+                <!-- <span style="margin-left: 5px;">Rating: <%= listing.averageRating  %><span style="color:darkgoldenrod">★</span></span> -->
+            <% } %>
+        </p>
+        
+    </div>
+   
+    </div>
+    </a>
+    <% } %>
+</div>
+
+
+

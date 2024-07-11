@@ -1,0 +1,136 @@
+<% layout("/layouts/boilerplate") %>
+<div class="row mt-3">
+    <div class="col-8 offset-2">
+        
+    <h3 style="color: #224477;">Edit Your Hotel  </h3>
+    <form method="POST" action="/hotel/<%=listing._id %>?_method=PUT" novalidate class="needs-validation" enctype="multipart/form-data">
+        <div class="mb-3">
+        <label for="title" class="form-label" style="font-weight: 500;">Title</label>
+        <input name="listing[title]" value="<%= listing.title %>" type="text"  class="form-control" style="border:2px solid #3498db;" required/>
+        <div class="valid-feedback" style="font-weight: 550;">Name Looks Good</div>
+        <div class="invalid-feedback" style="font-weight: 550;">Please write name</div>
+        </div>
+
+        <div class="mb-3">
+        <label for="description" class="form-label" style="font-weight: 500;">Description</label>
+        <textarea name="listing[description]" class="form-control" style="border:2px solid #3498db;" required ><%= listing.description %></textarea>
+        <div class="invalid-feedback" style="font-weight: 550;">Please write short description</div>
+        </div>
+
+        <!-- <div  class="mb-3">
+            <label for="image" class="form-label" style="font-weight: 500;">Upload New Image</label>
+            <input name="listing[image]"  type="file"  class="form-control" style="border:2px solid #3498db;" />
+            <div class="invalid-feedback" style="font-weight: 550;">Enter Image URL</div>
+        </div>
+        <div class="mb-3">
+            <label for="image2" class="form-label" style="font-weight: 500;">Additional Image URL</label>
+            <input name="listing[image2]"  type="file" class="form-control" style="border:2px solid #3498db;" />
+            <div class="invalid-feedback" style="font-weight: 550;">Enter Additional Image URL</div>
+        </div>
+        <div class="mb-3">
+            <label for="image3" class="form-label" style="font-weight: 500;">Additional Image URL</label>
+            <input name="listing[image3]"  type="file" class="form-control" style="border:2px solid #3498db;" />
+            <div class="invalid-feedback" style="font-weight: 550;">Enter Additional Image URL</div>
+        </div>
+        <div class="mb-3">
+            <label for="image4" class="form-label" style="font-weight: 500;">Additional Image URL</label>
+            <input name="listing[image4]"  type="file" class="form-control" style="border:2px solid #3498db;" />
+            <div class="invalid-feedback" style="font-weight: 550;">Enter Additional Image URL</div>
+        </div>
+        <div class="mb-3">
+            <label for="image5" class="form-label" style="font-weight: 500;">Additional Image URL</label>
+            <input name="listing[image5]" type="file" class="form-control" style="border:2px solid #3498db;" />
+            <div class="invalid-feedback" style="font-weight: 550;">Enter Additional Image URL</div>
+        </div> -->
+        <!-- <div class="mb-3">
+            <label for="image" class="form-label" style="font-weight: 500;">Upload New Image</label>
+            <input name="listing[image]" type="file" class="form-control" style="border:2px solid #3498db;"/>
+            <% if (listing.image && listing.image.url) { %>
+                <img src="<%= listing.image.url %>" alt="Image" style="width: 100px; height: auto;">
+            <% } %>
+            <div class="invalid-feedback" style="font-weight: 550;">Enter Image URL</div>
+        </div>
+        <div class="mb-3">
+            <label for="image2" class="form-label" style="font-weight: 500;">Additional Image URL</label>
+            <input name="listing[image2]" type="file" class="form-control" style="border:2px solid #3498db;"/>
+            <% if (listing.image2 && listing.image2.url) { %>
+                <img src="<%= listing.image2.url %>" alt="Image2" style="width: 100px; height: auto;">
+            <% } %>
+            <div class="invalid-feedback" style="font-weight: 550;">Enter Additional Image URL</div>
+        </div>
+        <div class="mb-3">
+            <label for="image3" class="form-label" style="font-weight: 500;">Additional Image URL</label>
+            <input name="listing[image3]" type="file" class="form-control" style="border:2px solid #3498db;"/>
+            <% if (listing.image3 && listing.image3.url) { %>
+                <img src="<%= listing.image3.url %>" alt="Image3" style="width: 100px; height: auto;">
+            <% } %>
+            <div class="invalid-feedback" style="font-weight: 550;">Enter Additional Image URL</div>
+        </div>
+        <div class="mb-3">
+            <label for="image4" class="form-label" style="font-weight: 500;">Additional Image URL</label>
+            <input name="listing[image4]" type="file" class="form-control" style="border:2px solid #3498db;"/>
+            <% if (listing.image4 && listing.image4.url) { %>
+                <img src="<%= listing.image4.url %>" alt="Image4" style="width: 100px; height: auto;">
+            <% } %>
+            <div class="invalid-feedback" style="font-weight: 550;">Enter Additional Image URL</div>
+        </div>
+        <div class="mb-3">
+            <label for="image5" class="form-label" style="font-weight: 500;">Additional Image URL</label>
+            <input name="listing[image5]" type="file" class="form-control" style="border:2px solid #3498db;"/>
+            <% if (listing.image5 && listing.image5.url) { %>
+                <img src="<%= listing.image5.url %>" alt="Image5" style="width: 100px; height: auto;">
+            <% } %>
+            <div class="invalid-feedback" style="font-weight: 550;">Enter Additional Image URL</div>
+        </div> -->
+        <div class="mb-3">
+            <label for="image" class="form-label" style="font-weight: 500;">Upload New Image</label>
+            <input name="listing[image]" type="file" class="form-control" style="border:2px solid #3498db;"/>
+            <% if (listing.image && listing.image.url) { %>
+                <img src="<%= listing.image.url %>" alt="Image" style="width: 100px; height: auto;">
+                <!-- <div>
+                    <input type="checkbox" name="deleteImages[]" value="image"/> Delete this image
+                </div> -->
+            <% } %>
+            <div class="invalid-feedback" style="font-weight: 550;">Enter Image URL</div>
+        </div>
+        <% for (let i = 2; i <= 5; i++) { %>
+        <div class="mb-3">
+            <label for="image<%= i %>" class="form-label" style="font-weight: 500;">Additional Image URL</label>
+            <input name="listing[image<%= i %>]" type="file" class="form-control" style="border:2px solid #3498db;"/>
+            <% if (listing['image' + i] && listing['image' + i].url) { %>
+                <img src="<%= listing['image' + i].url %>" alt="Image<%= i %>" style="width: 100px; height: auto;">
+                <div>
+                    <input type="checkbox" name="deleteImages[]" value="image<%= i %>"/> Delete this image
+                </div>
+            <% } %>
+            <div class="invalid-feedback" style="font-weight: 550;">Enter Additional Image URL</div>
+        </div>
+        <% } %>
+        <div class="row">
+        <div  class="mb-3 col-md-4">
+            <label for="price" class="form-label" style="font-weight: 500;">Price</label>
+            <input name="listing[price]"  value="<%= listing.price %>" type="number" class="form-control" style="border:2px solid #3498db;" required/>
+            <div class="invalid-feedback" style="font-weight: 550;">Price should be valid</div>
+        </div>
+       
+       
+        <div  class="mb-3 col-md-8">
+            <label for="country" class="form-label" style="font-weight: 500;">Country</label>
+            <input name="listing[country]" value="<%= listing.country %>" type="text" class="form-control" style="border:2px solid #3498db;" required/>
+            <div class="invalid-feedback" style="font-weight: 550;">Country should be valid</div>
+        </div>
+        </div>
+        <div  class="mb-3">
+            <label for="location" class="form-label" style="font-weight: 500;">Location</label>
+            <input name="listing[location]"  value="<%= listing.location %>" type="text" class="form-control" style="border:2px solid #3498db;" required/>
+            <div class="invalid-feedback" style="font-weight: 550;">Location should be valid</div>
+        </div>
+        
+        
+     
+        <button class="btn btn-dark mt-3">Save</button>
+        <br> <br/>
+    </form>
+</div>
+</div>
+<script src="/js/script.js"></script>

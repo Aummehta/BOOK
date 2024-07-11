@@ -1,0 +1,72 @@
+<% layout("/layouts/boilerplate") %>
+<div class="row mt-3">
+    <div class="col-8 offset-2">
+     
+    <h3 style="color: #224477;">Create a New Hotel </h3>
+
+    <form method="POST" action="/" novalidate class="needs-validation" enctype="multipart/form-data">
+        <div class="mb-3">
+        <label for="title" class="form-label" style="font-weight: 500;">Hotel Name</label>
+        <input name="listing[title]" placeholder="Add a title" type="text" class="form-control"  style="border:2px solid #3498db;" required />
+        <div class="valid-feedback" style="font-weight: 550;">Name Looks Good</div>
+        <div class="invalid-feedback" style="font-weight: 550;">Please write name</div>
+         </div>
+      
+       <div class="mb-3"> 
+        <label for="description" class="form-label" style="font-weight: 500;">Hotel Description</label>
+        <textarea name="listing[description]"   class="form-control " style="border:2px solid #3498db;"required ></textarea>
+        <div class="invalid-feedback" style="font-weight: 550;">Please write short description</div>
+        </div> 
+
+        
+        <div class="mb-3">
+            <label for="image" class="form-label" style="font-weight: 500;">Upload Image of Hotel </label>
+            <input name="listing[image]"  type="file" class="form-control" required style="border:2px solid #3498db;"/>
+            <div class="invalid-feedback" style="font-weight: 550;">Image URL should be valid</div>
+        </div>
+        
+        <div class="mb-3">
+            <label for="image2" class="form-label" style="font-weight: 500;">Upload Additional Image Of Hotel</label>
+            <input name="listing[image2]"  type="file" class="form-control"  style="border:2px solid #3498db;"/>
+        </div>
+        <div class="mb-3">
+            <label for="image3" class="form-label" style="font-weight: 500;">Upload Additional Image Of Hotel</label>
+            <input name="listing[image3]"  type="file" class="form-control"  style="border:2px solid #3498db;"/>
+        </div>
+        <div class="mb-3">
+            <label for="image4" class="form-label" style="font-weight: 500;">Upload Additional Image Of Hotel</label>
+            <input name="listing[image4]"  type="file" class="form-control"  style="border:2px solid #3498db;"/>
+        </div>
+        <div class="mb-3">
+            <label for="image5" class="form-label" style="font-weight: 500;">Upload Additional Image Of Hotel</label>
+            <input name="listing[image5]"  type="file" class="form-control"  style="border:2px solid #3498db;"/>
+        </div>
+        <div class="row">
+        <div class="mb-3 col-md-4"> 
+            <label for="price" class="form-label" style="font-weight: 500;">Price per night</label>
+            <input name="listing[price]" placeholder="Enter Price" type="number" class="form-control" required style="border:2px solid #3498db;"/>
+            <div class="invalid-feedback" style="font-weight: 550;">Price should be valid</div>
+        </div>
+ 
+    
+        <div class="mb-3 col-md-8">
+            <label for="country" class="form-label" style="font-weight: 500;">Country</label>
+            <input name="listing[country]" placeholder="Enter Country" type="text" class="form-control" required style="border:2px solid #3498db;"/>
+            <div class="invalid-feedback" style="font-weight: 550;">Country should be valid</div>
+          </div>
+        
+        </div>
+
+        <div class="mb-3">
+            <label for="location" class="form-label" style="font-weight: 500;">Location of Hotel</label>
+            <input name="listing[location]" placeholder="Enter Location" type="text" class="form-control" required style="border:2px solid #3498db;" />
+            <div class="invalid-feedback" style="font-weight: 550;">Location should be valid</div>
+        </div>
+
+       
+       
+        <button class="btn btn-dark mt-3">Add</button>
+        <br> <br />
+    </form>
+</div>
+</div>

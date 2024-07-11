@@ -1,0 +1,97 @@
+<nav class="navbar navbar-expand-md bg-body-light border-bottom sticky-top">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/"><i class="fa-regular fa-compass"></i></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <b><a class="nav-link "  href="/">TravelEase</a></b>
+
+          <a class="nav-link "  href="/hotel/new">Add New Hotel</a>
+         <% if (currUser) { %>
+          <a class="nav-link" href="/myhotel">My Hotels</a>
+         <% } %>
+        </div> 
+          <div class="navbar-search-form">
+            <form class="d-flex" action="/search" method="GET">
+                <input class="form-control me-2" type="search" name="query" placeholder="&#x1F50D; Search"   aria-label="Search">
+                <button class="btn btn-outline-light" type="submit">Search</button>
+            </form>
+           </div>
+
+           <!-- <div class="navbar-nav ms-auto">
+             <% if(!currUser) { %>
+            <b><a class="nav-link "  href="/signup">Sign Up </a></b>
+            
+            <a class="nav-link "  href="/login">Log in</a>
+            <% } %>
+            <% if(currUser) { %>
+             
+              <a class="nav-link" href="/logout">Log out <%= currUser.username %></a> 
+            <% } %>
+          </div>  -->
+          <div class="tax-toggle">
+            <div class="form-check-reverse form-switch">
+              <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+              <label class="form-check-label" for="flexSwitchCheckDefault" style="color:white">Display price after taxes</label>
+            </div>
+          </div>
+          <div class="navbar-nav ms-auto">
+            <% if (!currUser) { %>
+           
+                <b><a class="nav-link" href="/signup">Sign Up</a></b>
+                <span class="nav-divider"></span> 
+                <a class="nav-link" href="/login">Log in</a>
+              </div>
+            <% } else { %>
+              <span class="nav-link">Welcome, <%= currUser.username %></span>
+              <a class="nav-link" href="/logout">Log out</a>
+            <% } %>
+          </div>
+   
+         
+        
+
+        
+      
+    </div>
+  </nav>
+
+<!-- 
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      let taxSwitch = document.getElementById("flexSwitchCheckDefault");
+      taxSwitch.addEventListener("click", function() {
+        let taxInfo=document.getElementsByClassName("tax-info");
+        for(info of taxInfo){
+          if(info.style.display!="inline"){
+            info.style.display="inline"
+          }else{
+          info.style.display="none";
+          }
+        }
+      });
+  
+  </script> -->
+  <script>
+  document.addEventListener("DOMContentLoaded", function() {
+    let taxSwitch = document.getElementById("flexSwitchCheckDefault");
+    taxSwitch.addEventListener("click", function() {
+      let taxInfoElements = document.getElementsByClassName("tax-info");
+      let priceInfoElements = document.getElementsByClassName("price-info");
+
+      for (let i = 0; i < taxInfoElements.length; i++) {
+        let taxInfo = taxInfoElements[i];
+        let priceInfo = priceInfoElements[i];
+        if (taxSwitch.checked) {
+          taxInfo.style.display = "inline";
+          priceInfo.innerHTML = `&#8377; ${parseFloat(priceInfo.getAttribute("data-total-price")).toLocaleString("en-IN")}`;
+        } else {
+          taxInfo.style.display = "none";
+          priceInfo.innerHTML = `&#8377; ${parseFloat(priceInfo.getAttribute("data-original-price")).toLocaleString("en-IN")}`;
+        }
+      }
+    });
+  });
+</script>

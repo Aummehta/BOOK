@@ -1,0 +1,283 @@
+<!-- <% layout("/layouts/boilerplate") %>
+    
+    <div class="row mt-3" >
+        <div class="col-8 offset-3">
+            <h3 style="color: #224477;">Hotel Details</h3>
+        </div>
+       
+        <div class="card col-6 offset-3 show-card">
+                <img src="<%= listing.image %>" class="card-img-top show-img" alt="listing_image">
+                <div class="card-body">
+                <p class="card-text border-bottom ">
+                   <b> <%= listing.title %></b><br />
+                   <%= listing.description %><br />
+                   Price : &#8377; <%= listing.price.toLocaleString("en-IN") %> <br />
+                   Location : <%= listing.location %><br />
+                   Country : <%= listing.country %>
+                </p>
+                </div>
+        </div>
+        
+        <div class="btns">
+        <a href="/hotel/<%= listing._id %>/edit" class="btn btn-dark col-1 offset-3">Edit</a>
+    
+        <form method="POST" action="/hotel/<%= listing._id %>?_method=DELETE">
+            <button class="btn btn-dark  offset-5">Delete</button>
+        </form>
+                
+    </div>
+    </div> -->
+    <!-- <% layout("/layouts/boilerplate") %>
+    <div class="row mt-3">
+        <div class="col-8 offset-3">
+            <h3 style="color: #224477;">Hotel Details</h3>
+        </div>
+    
+        <div class="card col-6 offset-3 show-card">
+            <img src="<%= listing.image %>" class="card-img-top show-img" alt="listing_image">
+            <% if (listing.image2) { %>
+                <img src="<%= listing.image2 %>" class="card-img-top show-img" alt="additional_listing_image" style="margin-top: 10px;">
+            <% } %>
+            <div class="card-body">
+                <p class="card-text border-bottom">
+                    <b><%= listing.title %></b><br />
+                    <%= listing.description %><br />
+                    Price : &#8377; <%= listing.price.toLocaleString("en-IN") %> <br />
+                    Location : <%= listing.location %><br />
+                    Country : <%= listing.country %>
+                </p>
+            </div>
+        </div>
+    
+        <div class="btns">
+            <a href="/hotel/<%= listing._id %>/edit" class="btn btn-dark col-1 offset-3">Edit</a>
+    
+            <form id="deleteForm" method="POST" action="/hotel/<%= listing._id %>?_method=DELETE" onsubmit="return confirmDelete(event)">
+                <button type="submit" class="btn btn-dark offset-5">Delete</button>
+            </form>
+        </div>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        function confirmDelete(event) {
+            event.preventDefault();
+            Swal.fire({
+                title: 'Are you sure?',
+                text: "You won't be able to revert this!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Yes, delete it!'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    document.getElementById('deleteForm').submit();
+                }
+            });
+        }
+    </script> -->
+    <!-- <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet"> -->
+    <% layout("/layouts/boilerplate") %>
+<div class="row mt-3">
+    <div class="col-8 offset-3">
+        <h3 style="color: #224477;"><b><%= listing.title %></b></h3>
+    </div>
+
+    <div class="card col-6 offset-3 show-card listing-card">
+        <!-- <div class="swiper-container ">
+            <div class="swiper-wrapper ">
+                
+             <% if (listing.image) { %>
+                    <div class="swiper-slide blue-bordr">
+                        <img src="<%= listing.image %>" class="card-img-top show-img" alt="listing_image">
+                    </div>
+                <% } %>
+                <% if (listing.image2) { %>
+                    <div class="swiper-slide blue-bordr">
+                        <img src="<%= listing.image2 %>" class="card-img-top show-img" alt="additional_listing_image">
+                    </div>
+                <% } %>
+                <% if (listing.image3) { %>
+                    <div class="swiper-slide blue-bordr">
+                        <img src="<%= listing.image3 %>" class="card-img-top show-img" alt="additional_listing_image">
+                    </div>
+                <% } %>
+                <% if (listing.image4) { %>
+                    <div class="swiper-slide blue-bordr">
+                        <img src="<%= listing.image4 %>" class="card-img-top show-img" alt="additional_listing_image">
+                    </div>
+                <% } %>
+                <% if (listing.image5) { %>
+                    <div class="swiper-slide blue-bordr">
+                        <img src="<%= listing.image5 %>" class="card-img-top show-img" alt="additional_listing_image">
+                    </div>
+                <% } %>
+            </div>
+          
+            <div class="swiper-pagination"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+        </div> -->
+        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                <% if (listing.image.url) { %>
+                    <div class="carousel-item active blue-bordr">
+                        <img src="<%= listing.image.url %>" class="d-block w-100 card-img-top show-img" alt="listing_image">
+                    </div>
+                <% } %>
+                <% if (listing.image2.url) { %>
+                    <div class="carousel-item blue-bordr">
+                        <img src="<%= listing.image2.url %>" class="d-block w-100 card-img-top show-img" alt="additional_listing_image">
+                    </div>
+                <% } %>
+                <% if (listing.image3.url) { %>
+                    <div class="carousel-item blue-bordr">
+                        <img src="<%= listing.image3.url %>" class="d-block w-100 card-img-top show-img" alt="additional_listing_image">
+                    </div>
+                <% } %>
+                <% if (listing.image4.url) { %>
+                    <div class="carousel-item blue-bordr">
+                        <img src="<%= listing.image4.url %>" class="d-block w-100 card-img-top show-img" alt="additional_listing_image">
+                    </div>
+                <% } %>
+                <% if (listing.image5.url) { %>
+                    <div class="carousel-item blue-bordr">
+                        <img src="<%= listing.image5.url %>" class="d-block w-100 card-img-top show-img" alt="additional_listing_image">
+                    </div>
+                <% } %>
+            </div>
+            <% if (listing.image2.url || listing.image3.url || listing.image4.url || listing.image5.url) { %>
+            <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev"  style="color: blue !important;">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next"  style="color: blue !important;">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+            <% } %>
+        </div>
+        <div class="card-body ow-bordr">
+          <p class="card-text border-bottom" style="font-weight: 550 !important">
+              
+              <i>Owned by <%= listing.owner.username %></i>
+              <br />  <%= listing.description %><br />
+              Price : <span class="price-info" data-original-price="<%= listing.price %>" data-total-price="<%= (listing.price * 1.18).toFixed(2) %>">&#8377; <%= (listing.price ? listing.price.toLocaleString("en-IN") : "N/A") %></span> /night
+              <i class="tax-info">(18% GST included)</i><br />
+              <!-- Price: <span class="price-info" data-original-price="<%= listing.price %>" data-total-price="<%= (listing.price * 1.18).toFixed(2) %>">&#8377; <%= listing.price.toLocaleString("en-IN") %></span> per night <br /> -->
+                <!-- Price : &#8377; <%= listing.price.toLocaleString("en-IN") %> +18% GST per night <br /> -->
+                Location : <%= listing.location %><br />
+                Country : <%= listing.country %>
+            </p>
+        </div>
+    </div>
+    <% if(currUser && currUser._id.equals(listing.owner._id))  {%>
+        <div class="btns">
+            <a href="/hotel/<%= listing._id %>/edit" class="btn btn-dark col-1 offset-3">Edit</a>
+    
+            <form id="deleteForm" method="POST" action="/hotel/<%= listing._id %>?_method=DELETE" onsubmit="return confirmDelete(event)">
+                <button type="submit" class="btn btn-dark offset-5">Delete</button>
+            </form>
+        </div>
+     <% } %>   
+    <!-- <div class="btns">
+        <a href="/hotel/<%= listing._id %>/edit" class="btn btn-dark col-1 offset-3">Edit</a>
+
+        <form id="deleteForm" method="POST" action="/hotel/<%= listing._id %>?_method=DELETE" onsubmit="return confirmDelete(event)">
+            <button type="submit" class="btn btn-dark offset-5">Delete</button>
+        </form>
+    </div> -->
+
+    <div class="col-8 offset-3 mb-3">
+        <hr />
+        <h4>Leave a Review</h4>
+        <form action="/hotel/<%= listing.id %>/reviews" method="POST" novalidate class="needs-validation">
+            <!-- <div class="mb-3 mt-3">
+                <label for="rating" class="form-label" style="font-weight: 550;  font-size:large">Rating</label>
+                <input type="range" min="1" max="5" id="rating" name="review[rating]" class="form-range">
+            </div> -->
+            <div class="mb-3 mt-3">
+                  <label for="rating" class="form-label" style="font-weight: 550;  font-size:large">Rating</label>
+            <fieldset class="starability-slot">
+             
+           
+                
+                <input type="radio" id="no-rate" class="input-no-rate" name="review[rating]" value="1" checked aria-label="No rating." />
+                <input type="radio" id="first-rate1"    name="review[rating]" value="1" />
+                <label for="first-rate1" title="Terrible">1 star</label>
+                <input type="radio" id="first-rate2" name="review[rating]" value="2" />
+                <label for="first-rate2" title="Not good">2 stars</label>
+                <input type="radio" id="first-rate3" name="review[rating]" value="3" />
+                <label for="first-rate3" title="Average">3 stars</label>
+                <input type="radio" id="first-rate4" name="review[rating]" value="4" />
+                <label for="first-rate4" title="Very good">4 stars</label>
+                <input type="radio" id="first-rate5" name="review[rating]" value="5" />
+                <label for="first-rate5" title="Amazing">5 stars</label>
+              </fieldset>
+              </div>
+            <div class="mb-3 mt-3">
+                <label for="comment" class="form-label" style="font-weight: 550;  font-size:large">Comments</label>
+                <textarea name="review[comment]" id="comment" cols="30" rows="5" class="form-control" style="border:2px solid #224477;" required></textarea>
+                <div class="invalid-feedback" style="font-weight: 550;">
+                    Please add some comments for review
+                </div>
+            </div>
+            <button class="btn btn-outline-dark">Submit</button>
+        </form>
+
+        <hr />
+        <% if(listing.reviews.length>0) { %>
+        <div class="row" >
+            <h4>All Reviews</h4>
+        <% for(review of listing.reviews) {  %>
+            <div class="card col-5 ms-3 mb-3 custom-card-background"  style="border:2px solid #224477; background-color:white !important">
+                <div class="card-body mystyl" >
+                    <h5 class="card-title" style="color: #224477; font-weight:550 mt-3" > @<%= review.author.username %></h5>
+                    <p class="starability-result card-text " data-rating="<%= review.rating %>"></p>
+                    <p class="card-text mb-2" style="font-weight:550 !important" ><%= review.comment %></p>
+                    <!-- <p class="card-text" style=" font-weight:550 !important" ><%= review.rating %> stars</p> -->
+ 
+                    <% if(currUser && currUser._id.equals(review.author._id))  {%>
+                    <form class="mb-3" method="POST" action="/hotel/<%= listing._id %>/reviews/<%= review._id %>?_method=DELETE">
+                        <button class="btn btn-sm btn-dark">Delete</button>
+                    </form>
+                    <% } %>
+                </div>
+            </div> 
+        <% } %>
+        </div>
+        <% } %>
+    </div>
+    
+</div>
+
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<script>
+     
+    
+    function confirmDelete(event) {
+        event.preventDefault();
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                document.getElementById('deleteForm').submit();
+            }
+        });
+    }
+
+</script>
+
+    

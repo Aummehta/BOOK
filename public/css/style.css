@@ -1,0 +1,369 @@
+body{
+    display:flex;
+    flex-direction:column;
+    min-height:100vh;
+    /* background-color: whitesmoke !important; */
+
+}
+
+.container{
+    flex:1;
+}
+
+.custom-card-background {
+    background-color: white !important;
+}
+
+.navbar{
+    height:5rem;
+    background-color: #224477 ;
+}
+
+.fa-compass{
+    color: #fff !important;
+    font-size:2rem !important;
+}
+
+.nav-link{
+    color: #fff !important;
+    font-weight: 500 !important;
+    transition: all 0.3s ease;
+    border-radius: 20px ;
+}
+
+.nav-link:hover {
+    color:  #224477  !important;
+    background-color:  #fff !important;
+}
+
+.f-info-links a{
+    text-decoration: none;
+    color:#224477;
+    font-weight: 450
+}
+
+.f-info-links a:hover{
+    text-decoration: underline;
+    
+}
+
+.f-info-links,.f-info-socials,.f-info-brand{
+    width:100%;
+    display:flex;
+    align-items:center;
+    justify-content: center;
+}
+
+.f-info-socials i{
+   margin-right: 1rem;
+    font-size: 1.2rem;
+
+}
+
+.f-info{
+    text-align: center;
+    display:flex;
+    height:8rem;
+    background-color: #ebebeb;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: space-evenly;
+    color:#224477;
+}
+
+
+.listing-card{
+    border:none !important;
+    margin-bottom: 2rem;
+    
+}
+
+.card-img-top{
+    border-radius: 1rem !important;
+    width:100% !important;
+    object-fit: cover !important;
+   
+}
+
+.card-body{
+    padding:0 !important;
+   background-color: whitesmoke !important;
+}
+
+.card-body p{
+    color:#224477 !important;
+    font-weight: 400 !important;
+    /* background-color: whitesmoke !important; */
+}
+
+.listing-link{
+    text-decoration: none;
+}
+
+.card-img-overlay{
+    opacity:0;
+}
+
+.card-img-overlay:hover{
+    opacity:0.2;
+    background-color: white;
+}
+
+
+.show-img{
+    height:40vh;
+}
+
+.btns{
+    display:flex;
+    
+}
+
+
+.show-card{
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.navbar .container-fluid {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+}
+
+.navbar-search-form {
+    flex: 1 !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    position: relative !important;
+}
+
+.navbar .form-control {
+    border-radius: 20px;
+    border: 2px solid #fff;
+    padding-left: 30px;
+}
+
+.navbar .btn {
+    border-radius: 20px;
+    border: 2px solid #fff;
+   
+}
+
+.navbar-search-form .form-control {
+    width: 70vw !important; /* Adjust this value as needed to increase the width */
+    max-width: 200px !important; /* Optional: Set a max-width if needed */
+    border-radius: 20px !important;
+    border: 2px solid #fff;
+    margin-left:18rem;
+}
+.nav-divider{
+  
+
+        content: '';
+        display: inline-block;
+        width: 1px !important;
+        height: 20px !important; /* Adjust the height as needed to match the link's height */
+        background-color:white; /* Adjust the color as needed */
+        margin-right: 3px; /* Adjust the spacing to space the links appropriately */
+        vertical-align: middle !important;
+        position: relative !important;
+        top: 10px; /* Adjust to align the vertical line in the middle */
+    }
+    
+
+.mystyl{
+    background-color:white !important;
+}
+
+.blue-border {
+    border: 2px solid #224477 !important;
+    border-radius: 20px 20px 0 0 !important; 
+}
+
+.tax-info{
+    display:none;
+    
+}
+.tax-toggle{
+    border:1px solid white;
+    border-radius:1rem;
+    height:3.2rem;
+    padding:1rem;
+    margin-right:8rem;
+    display:flex;
+    align-items: center;
+}
+
+.blue-bordr {
+    border: 2px solid #224477 !important;
+    border-radius: 20px !important; 
+}
+.vertical-line {
+    border-left: 1px solid #fff !important; /* Adjust thickness and color as needed */
+    height: 20px !important; /* Adjust height as needed */
+    margin: 0 10px !important; /* Adjust spacing as needed */
+    vertical-align: middle !important;
+}
+
+.blue-bordrr {
+    border: 2px solid #224477 !important;
+    border-radius: 20px !important; 
+    border-radius: 0.3rem !important;
+}
+.own-bordr {
+    border-right: 2px solid #224477 !important;
+    border-bottom: 2px solid #224477 !important;
+    border-left: 2px solid #224477 !important;
+    border-top: none !important; 
+    padding-left: 10px !important; /* Adjust the padding as needed */
+    padding-right: 10px !important; /* Adjust the padding as needed */
+}
+
+.ow-bordr{
+    border-right: 2px solid #224477 !important;
+    border-bottom: 2px solid #224477 !important;
+    border-left: 2px solid #224477 !important;
+    border-top: none !important; 
+    padding-left: 10px !important; /* Adjust the padding as needed */
+    padding-right: 10px !important; /* Adjust the padding as needed */
+
+}
+
+
+.star {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-color: transparent;
+    border: 1px solid yellow;
+    margin-right: 5px; /* Add some spacing between stars */
+}
+
+.filled-star {
+    background-color: yellow;
+}
+
+
+.signup-container {
+    background: linear-gradient(to right, #80deea, #224477);
+    padding: 30px 50px; /* Adjust the padding to make the box more rectangular */
+    border-radius: 20px; /* Increase border-radius to maintain some rounding */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    display: flex;
+    max-width: 800px; /* Increase maximum width for wider appearance */
+    width: 100%;
+    align-items: center;
+    margin: 40px auto; /* Center the box horizontally with some margin */
+    height: auto;
+}
+.signup-container .mb-3 {
+    margin-bottom: 10px !important; /* Reduce space between each form field */
+}
+
+.signup-container .left-side {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    border-right: 1px solid #ddd;
+}
+
+.signup-container .left-side i {
+    font-size: 100px !important; /* Increased font size of the compass */
+    margin-bottom: 10px !important;
+    color: #fff !important;
+}
+
+.signup-container .left-side h3 {
+    color: #fff;
+    font-size: 24px; /* Increased font size of "TravelEase" */
+    margin: 0;
+}
+
+.signup-container .right-side {
+    flex: 2;
+    padding: 20px;
+}
+
+.signup-container h2 {
+    margin-bottom: 20px;
+    color: white;
+    font-size: 24px;
+}
+
+.signup-container .form-label {
+    color:white;
+    font-weight: 500;
+}
+
+.signup-container .form-control {
+    width: 100%;
+    padding: 12px;
+    margin: 12px 0;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+}
+
+.signup-container .form-control:focus {
+    border-color: #2575fc;
+    box-shadow: 0 0 8px rgba(37, 117, 252, 0.2);
+}
+
+.signup-container .btn {
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(to right, #6a11cb, #2575fc);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 18px;
+    margin-top: 10px;
+    transition: background 0.3s ease;
+}
+
+.signup-container .btn:hover {
+    background: linear-gradient(to right, #2575fc, #6a11cb);
+}
+
+.signup-container hr {
+    width: 120% !important;
+    margin-top: 20px;
+    border: 1px solid #fff; /* Increased size of horizontal line */
+}
+
+.signup-container #username-label {
+    margin-bottom: 5px; /* Decrease space between "Username" label and input field */
+}
+
+.signup-container #username {
+    margin-top: 5px; /* Decrease space between "Username" input field and next field */
+}
+
+.signup-container #email-label {
+    margin-bottom: 3px !important; /* Decrease space between "Username" label and input field */
+}
+
+.signup-container #email {
+    margin-top: 7px !important; /* Decrease space between "Username" input field and next field */
+}
+.signup-container #password-label {
+    margin-bottom: 9px; /* Decrease space between "Username" label and input field */
+}
+
+.signup-container #password {
+    margin-top: 5px; /* Decrease space between "Username" input field and next field */
+}
+.signup-container h3 {
+    font-size: 40px !important; /* Increase font size of "TravelEase" */
+}
+
+.signup-container h2 {
+    font-size: 32px; /* Increase font size of "Signup" */
+}
