@@ -24,7 +24,7 @@ router.route("/")
     { name: 'listing[image5]', maxCount: 1 }
 ]), wrapAsync(listingController.createListing));
 
-
+//hello world
 router.get("/hotel/new",isLoggedIn,listingController.renderNewForm)
 
 router.route("/hotel/:id")
